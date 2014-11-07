@@ -1,0 +1,72 @@
+<!DOCTYPE html>  <meta charset="utf-8" />  
+
+<title>Ripple Ledger Listening Module</title>  
+
+<link rel="stylesheet" type="text/css" href="/css/default.css"> 
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="/js/lib/underscore.js"> </script>
+<script src="/js/lib/highlight/highlight.pack.js"></script>
+
+<script>$(document).ready(function() {
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});</script>
+
+<body>
+	<h3> Ripple Ledger Listening Module </h3>
+	<a href="https://github.com/ripple/ripple-lib" target="_blank"> ripple-lib </a> <br/>
+	<i> server_info is set to s1.ripple.com </i> <br/>
+	<i> book_offers is set to Bitstamp </i><br/>
+	<i> Connect to subscribe without adding a specific stream will monitor the ledger
+_state by default </i>	<div id="controller">
+			<button id="connect"> Connect to: </button>
+			<input id="socketUri" name="socketUri" value="wss://s1.ripple.com:443"> 
+		<select id="selection">
+			<option id="subscribe" name="command" value='subscribe' > subscribe </option>
+			<option id="server_info" name="command" value='server_info'> server_info </option>
+			<option id="unl_list" name="command" value='unl_list'> unl_list </option>
+			<option> ----ORDERBOOK REQUESTS---- </option>
+			<option id="book_offers" name="command" value='book_offers'> book_offers </option>
+			<option> ----LEDGER REQUESTS---- </option>
+			<option id="ledger" name="command" value='ledger'> ledger </option>
+			<option id="ledger_header" name="command" value='ledger_header'> ledger_header </option>
+			<option id="ledger_entry" name="command" value='ledger_entry'> ledger_entry </option>
+			<option id="ledger_closed" name="command" value='ledger_closed'> ledger_closed </option>
+			<option id="ledger_current" name="command" value='ledger_current'> ledger_current </option>
+			<option> ----ACCOUNT REQUESTS---- </option>
+			<option id="account_info" name="command" value='account_info'> account_info </option>
+			<option id="account_lines" name="command" value='account_lines'> account_lines </option>
+			<option id="account_offers" name="command" value='account_offers'> account_offers </option>
+			<option id="account_tx" name="command" value='account_tx'> account_tx </option>
+			<option id="account_balance" name="command" value='account_balance'> account_balance </option>
+			<option id="owner_count" name="command" value='ower_count'> owner_count </option>
+			<option id="ripple_balance" name="command" value='ripple_balance'> ripple_balance </option>
+			<option> ----TRANSACTION REQUESTS---- </option>
+			<option id="transaction_entry" name="command" value='transaction_entry'> transaction_entry </option>
+			<option id="tx" name="command" value='tx'> tx </option>
+			<option id="ripple_path_find" name="command" value='ripple_path_find'> ripple_path_find </option>
+		</select>
+	</div>
+
+	<div id="result">
+
+	</div>
+
+</body>
+
+<script src="/js/form.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
