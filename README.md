@@ -1,3 +1,6 @@
+This modest tool aim to easily test most of the command of the ripple-lib and help to understand the results from the rippled API
+
+
 How to install ?
 npm install ,
 node server.js
