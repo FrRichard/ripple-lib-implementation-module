@@ -1,4 +1,11 @@
+//////////////////////////////////////////Install///////////////////////////////////////////////
+npm install
+node server.js
 
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
 Attention, les commandes listés ci-dessous ne sont pas toutes prisent en charge par ripple-lib!
 
 =>https://ripple.com/build/rippled-apis/#list-of-public-commands
@@ -36,7 +43,7 @@ Dernier écueil: la doc de ripple-lib renvoie sur le wiki pour la formation des 
 
 /////////////////////////////////////NOTES/////////////////////////////////////////////////
 
-Liste des choses qui ne marchent pas/ pètent couille à configurer
+Eléments posant des problèmes de configuration
 
 	transaction_entry => probablement paramètres mal configurés. Mal documenté.
 	tx => //
@@ -44,28 +51,21 @@ Liste des choses qui ne marchent pas/ pètent couille à configurer
 
 
 
-Liste des choses spéciales à requêter en admin
+Liste des éléments à requêter en admin
 
 	remote.requestPeers
 	unl_add
 	unl_delete
 	wallet_accounts
 
-Liste des choses mystiques 
+Problèmes d'interprétation de certains résultats
 
-	account_balance  ==> résultat mystique, non documenté, seule référence ici :https://github.com/ripple/ripple-lib/blob/develop/src/js/ripple/amount.js    
-	Responsable du mystère: https://github.com/boxbag
+	account_balance  ==> résultat difficile à interpréter, non documenté, seule référence ici :https://github.com/ripple/ripple-lib/blob/develop/src/js/ripple/amount.js    
+	Personne en charge du développement du module: https://github.com/boxbag
 
-	ripple_balance ==> même format que account_balance. moi pas comprendre. value en drops ? sens des champs?? pas documenté
+	ripple_balance ==> même format que account_balance.  value en drops ?  pas documenté
 
 	owner_count ==> renvoie le nombre de currency du solde +1 (ex:tu possèdes xrp,btc,usd ==> 4) (hypothèse: le +1 compte pour la réserve)
 
-Liste des choses potentiellement buguées
-
-	transaction_entry =>{ error: 'remoteError',
-  						error_message: 'Remote reported an error.',remote: 
-   						{ error: 'internal',
-     					error_code: 59,
-     		=> Bug ripple-lib ?
 
 
