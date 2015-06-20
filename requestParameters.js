@@ -9,6 +9,17 @@ var requestParameters= {
 		}
 	},
 
+	orderbook : {
+		BASE : {
+            'currency':'USD',
+            'issuer': 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',                 
+        },
+        TRADE : {
+           	'currency':'XRP',
+           	'issuer': null,
+        }
+	},
+
 	ledger : {
 	    command: "ledger",
 	    full : true
@@ -25,40 +36,41 @@ var requestParameters= {
 	},
 
 	account_info : {
-		account:"rpsye7YABTmx881KEqeb6SADCLzJkGevHe"
+		account:"rGd4FaNjg22EvTuot3SRKF1suueUSc8Lhd"
 	},
 
 	account_lines : {
 	    command: "account_lines",
-	    account: "rpsye7YABTmx881KEqeb6SADCLzJkGevHe",
-	    ledger: "current"
+	    account: "rGd4FaNjg22EvTuot3SRKF1suueUSc8Lhd",
+	    ledger: "current",
+	    limit:1
 	},
 
 	account_offers : {
 	    command: "account_offers",
-	    account: "rpsye7YABTmx881KEqeb6SADCLzJkGevHe",
+	    account: "rGd4FaNjg22EvTuot3SRKF1suueUSc8Lhd",
 	    ledger: "current"
 	},
 
 	account_tx : {
 	   command: "account_tx",
-	   account: "rpsye7YABTmx881KEqeb6SADCLzJkGevHe",
+	   account: "rGd4FaNjg22EvTuot3SRKF1suueUSc8Lhd",
 	   ledger_index_min: -1,
 	   ledger_index_max: -1,
 	   binary: false,
 	   count: false,
 	   descending: false,
 	   offset: 0,
-	   limit: 10,
+	   limit: 100,
 	   forward: false
 	},
 
 	account_balance : {
-		account: "rpsye7YABTmx881KEqeb6SADCLzJkGevHe",
+		account: "rGd4FaNjg22EvTuot3SRKF1suueUSc8Lhd",
 		ledger: "current"
 	},
 	owner_count : {
-		account: "rpsye7YABTmx881KEqeb6SADCLzJkGevHe",
+		account: "rGd4FaNjg22EvTuot3SRKF1suueUSc8Lhd",
 		ledger: "current"
 	},
 	ripple_balance : {

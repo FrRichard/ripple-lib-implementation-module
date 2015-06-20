@@ -24,10 +24,12 @@ _state by default </i>	<br/>
 	<i>parameters used as example for this module are defined in requestParameters.js</i>
 <div id="controller">
 			<button id="connect"> Connect to: </button>
-			<input id="socketUri" name="socketUri" value="wss://s1.ripple.com:443"> 
+			<input id="socketUri" name="socketUri" value="wss://s-east.ripple.com:443"> 
 		<select id="selection">
+			<option id="payment" name="command" value="payment" > payment </option>
 			<option> ----STREAMS---- </option>
 			<option id="subscribe" name="command" value='subscribe' > subscribe </option>
+			<option id="subscribe_orderbook" name="command" value='orderbook' > orderbook </option>
 			<option> ----SERVER INFOS---- </option>
 			<option id="server_info" name="command" value='server_info'> server_info </option>
 			<option id="unl_list" name="command" value='unl_list'> unl_list </option>

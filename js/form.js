@@ -132,6 +132,7 @@ function resultContainerAttribution() {
 
 
 socket.on('result', function(result) {
+	
 	var divNum = nbrResultContainer;
 	console.log(divNum);
 	displayObject(result,divNum);
