@@ -86,7 +86,7 @@ io.on('connection', function(socket) {
 		
 		} else if( command.req == 'orderbook') {
 
-			var parameters = {
+			var parametersBID = {
 				currency_gets: 'USD',
 				issuer_gets:'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
 				currency_pays:'XRP',
@@ -94,11 +94,20 @@ io.on('connection', function(socket) {
 			};
 			// var mybook_bid = remote.book(parameters);
 			// var mybook_bid = remote.book(reqParameters.BASE.currency, reqParameters.BASE.issuer, reqParameters.TRADE.currency, reqParameters.TRADE.issuer);
-			var mybook_bid = remote.book(parameters);
+			var mybook_bid = remote.book(parametersBID);
     		// var mybook_ask = remote.book(reqParameters.TRADE.currency, reqParameters.TRADE.issuer, reqParameters.BASE.currency, reqParameters.BASE.issuer);
 
+    		var parametersASK = {
+				currency_gets: 'XRP',
+				issuer_gets:null,
+				currency_pays:'USD',
+				issuer_pays:'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B'
+			};
+
+    		var mybook_ask = remote.book(parametersASK);
+
 		    mybook_bid.on("trade", handle_bids);
-		    // mybook_ask.on("trade", handle_asks);  
+		    mybook_ask.on("trade", handle_asks);  
 
 		    function handle_bids(tg, tp)
 		    {
